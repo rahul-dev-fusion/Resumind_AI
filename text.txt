@@ -1,0 +1,16 @@
+#Create New React App 
+$ npm create vite@latest ./
+#Choose React + Router V7 + continue with default options 
+$ npm run dev {u will see react router page}
+
+# Serverless Cloud AI < Puter.js >
+https://developer.puter.com/
+
+#Go to Personal Internet Computer < Puter.com >
+https://puter.com/
+
+npm i -D tw-animate-css  {For Cool animations}
+npm i clsx zustand tailwind-merge pdfjs-dist
+
+#Now Add all icons and image in public folder
+ 
