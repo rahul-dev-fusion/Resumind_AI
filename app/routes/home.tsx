@@ -2,15 +2,26 @@ import { resumes } from "~/constants";
 import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
+import { usePuterStore } from "~/lib/puter";
+import { useLocation, useNavigate } from "react-router";
+import { useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "resumind.ai" },
+    { title: "Resumind.AI" },
     { name: "description", content: "Smart feedback for ur dream job !!" },
   ];
 }
 
 export default function Home() {
+  const { isLoading, auth } = usePuterStore();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!auth.isAuthenticated) navigate('/auth?next=/');
+  }, [auth.isAuthenticated]);
+
   return (
     <main className="bg-[url('images/bg-main.svg')] bg-cover">
       <Navbar />
