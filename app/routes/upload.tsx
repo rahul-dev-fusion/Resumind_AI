@@ -39,7 +39,7 @@ const upload = () => {
 
       setStatusText("Uploading résumé...");
       const uploadedFile = await fs.upload([file]);
-      if (!uploadedFile) throw new Error("Failed to upload résumé");
+      if (!uploadedFile) throw new Error("Failed to upload resume");
 
       setStatusText("Converting PDF...");
       const imgRes = await convertPdfToImage(file);
@@ -49,7 +49,7 @@ const upload = () => {
       const uploadedImage = await fs.upload([imgRes.file]);
       if (!uploadedImage) throw new Error("Failed to upload preview image");
 
-      setStatusText("Saving job & résumé details...");
+      setStatusText("Saving job & resume details...");
       const id = generateUUID();
       const record = {
         id,
@@ -62,7 +62,7 @@ const upload = () => {
       };
       await kv.set(`resume:${id}`, JSON.stringify(record));
 
-      setStatusText("Analyzing résumé...");
+      setStatusText("Analyzing resume...");
       const feedbackResp = await ai.feedback(
         uploadedFile.path,
         prepareInstructions({ jobTitle, jobDescription })
@@ -78,6 +78,7 @@ const upload = () => {
 
       setStatusText("Analysis completed. Redirecting...");
       console.log(record);
+      navigate(`/resume/${id}`);
     } catch (err: any) {
       console.error(err);
       setStatusText(`Error: ${err.message}`);
