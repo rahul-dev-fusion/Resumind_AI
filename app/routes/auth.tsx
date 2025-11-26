@@ -4,7 +4,7 @@ import { usePuterStore } from "~/lib/puter";
 
 export const meta = () => [
   { title: "Resumind.AI | Auth" },
-  { name: "descipton", content: "Log into your account" },
+  { name: "description", content: "Log into your account" },
 ];
 
 const auth = () => {
