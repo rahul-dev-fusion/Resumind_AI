@@ -37,7 +37,7 @@ const upload = () => {
     try {
       setIsProcessing(true);
 
-      setStatusText("Uploading résumé...");
+      setStatusText("Uploading resume...");
       const uploadedFile = await fs.upload([file]);
       if (!uploadedFile) throw new Error("Failed to upload resume");
 
