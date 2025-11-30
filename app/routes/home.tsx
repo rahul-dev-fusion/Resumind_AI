@@ -47,7 +47,7 @@ export default function Home() {
           <h1>Track Your Applications & Resume Scores</h1>
           {!loadingResumes && resumes.length === 0 ? (
             <h2>
-              You haven't submitted any resumes yet. please upload one to get
+              You haven't submitted any resumes yet. please upload your first resume to get
               started!
             </h2>
           ) : (

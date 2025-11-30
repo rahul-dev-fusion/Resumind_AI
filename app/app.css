@@ -70,7 +70,7 @@ form {
     }
   }
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm cursor-pointer;
   }
   .auth-button {
     @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
@@ -114,6 +114,47 @@ form {
   }
   .uploader-selected-file {
     @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+  }
+  /* Wipe page styles */
+  .wipe-page {
+    @apply flex flex-col items-center gap-8 pt-6 px-6 max-w-4xl mx-auto;
+  }
+
+  .wipe-card {
+    @apply w-full bg-white rounded-2xl p-6 border border-gray-100 shadow-sm relative z-10;
+  }
+
+  .soft-card {
+    @apply p-6 bg-white rounded-2xl shadow-sm border border-gray-50;
+  }
+
+  .file-list {
+    @apply mt-4 grid gap-3;
+  }
+
+  .file-item {
+    @apply p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow bg-gray-50;
+  }
+
+  .danger-button {
+    @apply bg-gradient-to-br from-red-400 to-red-600 text-white px-4 py-2 rounded-lg shadow-md pointer-events-auto;
+  }
+
+  .empty-state {
+    @apply mt-4 p-6 rounded-lg bg-gray-50 text-dark-200;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/40 flex items-center justify-center p-6 z-50;
+  }
+
+  .modal-card {
+    @apply max-w-lg w-full bg-white rounded-2xl p-6 border border-gray-100 shadow-lg;
+  }
+
+  .modal-actions .back-button {
+    @apply bg-white text-dark-200 border-gray-200;
   }
 }
 
